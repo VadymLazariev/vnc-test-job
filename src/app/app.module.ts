@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RxjsLongPollingComponent } from './rxjs-long-polling/rxjs-long-polling.component';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { RxjsLongPollingComponent } from './rxjs-long-polling/rxjs-long-polling.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
