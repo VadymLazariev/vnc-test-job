@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../core/services/http.service';
 import {UserService} from '../core/services/user.service';
-import {interval, merge, Observable} from 'rxjs';
+import {from, Observable, timer} from 'rxjs';
 import {CurrentTime} from '../core/models/current-time';
 import {filter, switchMap} from 'rxjs/operators';
 
@@ -23,11 +23,11 @@ export class RxjsLongPollingComponent implements OnInit {
 
   ngOnInit() {
     this.onlineStatus$ = this.userService.getOnlineStatus();
-    this.currentTime$ = merge(
-      this.http.getCurrentTime('Europe/Zaporozhye'), interval( 5000))
+
+    this.currentTime$ = timer(0, 5000)
       .pipe(
-        filter(() => this.userService.isUserOnline$.value ),
-        switchMap(() => this.http.getCurrentTime('Europe/Zaporozhye'))
+        filter(() => this.userService.isUserOnline$.value),
+        switchMap(() => from(this.http.getCurrentTime('Europe/Zaporozhye')))
       );
   }
 
