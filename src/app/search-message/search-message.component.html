@@ -1,0 +1,13 @@
+<input type="text" (keyup)="searchMessages($event.target.value)">
+
+<ng-container *ngIf="(filteredMessages | async)?.length < 1; else filtered">
+  <p *ngFor="let message of messages">
+    {{message?.text}}
+  </p>
+</ng-container>
+
+<ng-template #filtered>
+  <p *ngFor="let message of filteredMessages | async">
+    {{message?.text}}
+  </p>
+</ng-template>

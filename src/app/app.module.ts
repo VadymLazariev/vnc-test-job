@@ -8,13 +8,15 @@ import {CoreModule} from './core/core.module';
 import { LogInComponent } from './log-in/log-in.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NumbersListComponent } from './numbers-list/numbers-list.component';
+import { SearchMessageComponent } from './search-message/search-message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RxjsLongPollingComponent,
     LogInComponent,
-    NumbersListComponent
+    NumbersListComponent,
+    SearchMessageComponent
   ],
   imports: [
     BrowserModule,
