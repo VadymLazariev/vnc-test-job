@@ -1,3 +1,10 @@
+<button (click)="changeUserState()">
+  <span *ngIf="onlineStatus$ | async; else online">Offline</span>
+  <ng-template #online>
+    <span>Online</span>
+  </ng-template>
+</button>
+
 <p>
-  rxjs-long-polling works!
+  Your date time is {{(currentTime$ | async)?.datetime}}
 </p>
