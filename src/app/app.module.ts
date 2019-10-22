@@ -7,12 +7,14 @@ import { RxjsLongPollingComponent } from './rxjs-long-polling/rxjs-long-polling.
 import {CoreModule} from './core/core.module';
 import { LogInComponent } from './log-in/log-in.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NumbersListComponent } from './numbers-list/numbers-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RxjsLongPollingComponent,
-    LogInComponent
+    LogInComponent,
+    NumbersListComponent
   ],
   imports: [
     BrowserModule,
